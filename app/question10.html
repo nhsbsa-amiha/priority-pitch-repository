@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/Question-9",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-heading-l">
+        Your details
+      </h1>
+      <p>Value for Money</p>
+
+      <form action="/details" method="post" novalidate>
+
+        {{ input({
+          label: {
+            text: "Please state how benefits will justify costs",
+            size: "s"
+          },
+          id: "justify-costs",
+          name: "justify-costs"
+        }) }}
+
+        {{ input({
+          label: {
+            text: "How can we justify its cost to both the NHS and and taxpayer?",
+            size: "s"
+          },
+          id: "costs-nhs",
+          name: "costs-nhs"
+        }) }}
+
+        {{ button({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

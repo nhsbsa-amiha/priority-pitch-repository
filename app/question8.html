@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/Question-7",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-heading-l">
+        Your details
+      </h1>
+      <p>Market Knowledge</p>
+
+      <form action="/details" method="post" novalidate>
+
+        {{ input({
+          label: {
+            text: "Please state the strategic advantages of these investments in the current market and/or environment",
+            size: "s"
+          },
+          id: "market-knowledge",
+          name: "market-knowledge"
+        }) }}
+
+        {{ input({
+          label: {
+            text: "What changes could be expected in the market throughout this project and will that affect its intended consequences?",
+            size: "s"
+          },
+          id: "market-changes",
+          name: "market-changes"
+        }) }}
+
+        {{ input({
+          label: {
+            text: "How will we present the final product to the intended users and/or market?",
+            size: "s"
+          },
+          id: "market-presentation",
+          name: "market-presentation"
+        }) }}
+
+        {{ button({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

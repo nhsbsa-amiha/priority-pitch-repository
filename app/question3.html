@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/Question-2",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-heading-l">
+        Your details
+      </h1>
+      <p>Other Supporting Parties</p>
+
+      <form action="/details" method="post" novalidate>
+
+        {{ input({
+          label: {
+            text: "Please state who is confirmed to be supporting this case and their departments",
+            size: "s"
+          },
+          id: "supporting-case",
+          name: "supporting-case"
+        }) }}
+
+        {{ input({
+          label: {
+            text: "Please state any other peoples or departments whose support you believe this case could use",
+            size: "s"
+          },
+          id: "other-support",
+          name: "other-support"
+        }) }}
+
+        {{ button({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

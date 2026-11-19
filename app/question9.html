@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/Question-8",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-heading-l">
+        Your details
+      </h1>
+      <p>Deliverability</p>
+
+      <form action="/details" method="post" novalidate>
+
+        {{ input({
+          label: {
+            text: "How will this project be managed, by who and to which standards?",
+            size: "s"
+          },
+          id: "project-management",
+          name: "project-management"
+        }) }}
+
+        {{ input({
+          label: {
+            text: "Do we currently have the capacity and capability to see it through or would outsourcing be required? Please provide specifics to each part as necessary",
+            size: "s"
+          },
+          id: "capacity-capability",
+          name: "capacity-capability"
+        }) }}
+
+        {{ button({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

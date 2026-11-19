@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/Question-3",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-heading-l">
+        Your details
+      </h1>
+      <p>Customer, User or Business Need?</p>
+
+      <form action="/details" method="post" novalidate>
+
+        {{ input({
+          label: {
+            text: "Please state the problem this would solve or the opportunity it would utilise",
+            size: "s"
+          },
+          id: "problem-opportunity",
+          name: "problem-opportunity"
+        }) }}
+
+        {{ input({
+          label: {
+            text: "Please state how this makes things easier for put customers or other users",
+            size: "s"
+          },
+          id: "problem-solve",
+          name: "problem-solve"
+        }) }}
+
+        {{ button({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

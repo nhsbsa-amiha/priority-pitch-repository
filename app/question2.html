@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/Question-1",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-heading-l">
+        Your details
+      </h1>
+      <p>Pitch Details</p>
+
+      <form action="/details" method="post" novalidate>
+
+        {{ input({
+          label: {
+            text: "Please enter a brief summary of your current Pitch",
+            size: "s"
+          },
+          id: "pitch-summary",
+          name: "pitch-summary"
+        }) }}
+
+        {% from "file-upload/macro.njk" import fileUpload %}
+
+        {{ fileUpload({
+        label: {
+            heading: "Upload a file",
+            size: "l"
+        },
+        name: "file-hint"
+        }) }}
+
+        {{ button({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

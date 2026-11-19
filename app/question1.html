@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/start-page",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-heading-l">
+        Your details
+      </h1>
+      <p>Prior Questions</p>
+
+      <form action="/form-handler" method="post" novalidate>
+
+        {{ input({
+          label: {
+            text: "What is this Pitch called?",
+            size: "s"
+          },
+          id: "pitch-name",
+          name: "pitch-name"
+        }) }}
+
+        {{ input({
+          label: {
+            text: "Who currently owns this project?",
+            size: "s"
+          },
+          id: "example1",
+          name: "example1"
+        }) }}
+
+        {{ input({
+          label: {
+            text: "What is their role in the NHSBSA",
+            size: "s"
+          },
+          hint: {
+            text: "Who is their manager?"
+          },
+          id: "example2",
+          name: "example2"
+        }) }}
+
+        {{ input({
+          label: {
+            text: "Date of Pitch",
+            size: "s"
+          },
+          id: "example3",
+          name: "example3",
+          width: 20,
+          type: "date",
+          autocomplete: "off"
+        }) }}
+
+        {{ button({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
