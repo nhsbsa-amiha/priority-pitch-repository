@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+
+{{ textarea({
+  label: {
+    heading: "Can you provide more detail about your project?",
+    size: "l"
+  },
+  hint: {
+    text: "For example, what you hope to achieve with this project, what the benefits will be and how it will be delivered.
+  },
+  id: "example",
+  name: "example"
+}) }}
+
+<form action="/form-handler" method="post" novalidate></form>
+
+
+
+
+
+
+
