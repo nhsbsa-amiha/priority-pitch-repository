@@ -1,51 +1,47 @@
-
-{% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-      {{ backLink({
-        href: "/affordability",
-        text: "Back"
-      }) }}
-
-      <h1 class="nhsuk-heading-l">
-        Affordability
-      </h1>
+{% extends "layout.html" %}
  
-
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+ 
 {% block beforeContent %}
   {{ backLink({
-    href: "/affordability",
+    href: "/question6",
     text: "Back"
   }) }}
-{% endblock %}      
-
+{% endblock %}
+ 
+{% block content %}
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-two-thirds">
+<h1 class="nhsuk-heading-l">
+        Your details
+</h1>
+<p>Affordability</p>
+ 
       <form action="/details" method="post" novalidate>
-
-        {{ textarea({
+ 
+        {{ input({
           label: {
             text: "What are the capital and/or revenue requirements over the span of this project?",
-            classes: "nhsuk-label--s"
+            size: "s"
           },
           id: "affordability",
-          name: "affordability",
-          value: data.affordability
+          name: "affordability"
         }) }}
-
-        {{ textarea({
+ 
+        {{ input({
           label: {
             text: "Where will this funding come from? Please be clear who you expect to fund which aspect of this project and when?",
-            classes: "nhsuk-label--s"
+            size: "s"
           },
           id: "funding-source",
-          name: "funding-source",
-          value: data["funding-source"]
+          name: "funding-source"
         }) }}
-
+ 
         {{ button({
           text: "Continue"
         }) }}
-
+ 
       </form>
-    </div>
-  </div>
+</div>
+</div>
 {% endblock %}
