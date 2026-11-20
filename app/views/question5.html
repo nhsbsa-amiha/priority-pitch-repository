@@ -1,47 +1,47 @@
 {% extends "layout.html" %}
-
+ 
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
-
+ 
 {% block beforeContent %}
   {{ backLink({
-    href: "/question4",
+    href: "/Question-3",
     text: "Back"
   }) }}
 {% endblock %}
-
+ 
 {% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-      <h1 class="nhsuk-heading-l">
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-two-thirds">
+<h1 class="nhsuk-heading-l">
         Your details
-      </h1>
-      <p>Customer, User or Business Need?</p>
-
+</h1>
+<p>Whose Approvals are Required?</p>
+ 
       <form action="/details" method="post" novalidate>
-
+ 
         {{ input({
           label: {
-            text: "Please state the problem this would solve or the opportunity it would utilise",
+            text: "Please state which approvals you have confirmed to be required for this case",
             size: "s"
           },
-          id: "problem-opportunity",
-          name: "problem-opportunity"
+          id: "approvals-required",
+          name: "approvals-required"
         }) }}
-
+ 
         {{ input({
           label: {
-            text: "Please state how this makes things easier for put customers or other users",
+            text: "Please state which approvals you believe may also be required for this case",
             size: "s"
           },
-          id: "problem-solve",
-          name: "problem-solve"
+          id: "approvals-optional",
+          name: "approvals-optional"
         }) }}
-
+ 
         {{ button({
           text: "Continue"
         }) }}
-
+ 
       </form>
-    </div>
-  </div>
+</div>
+</div>
 {% endblock %}
