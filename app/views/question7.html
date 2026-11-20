@@ -12,6 +12,13 @@
       </h1>
  
 
+{% block beforeContent %}
+  {{ backLink({
+    href: "/affordability",
+    text: "Back"
+  }) }}
+{% endblock %}      
+
       <form action="/details" method="post" novalidate>
 
         {{ textarea({
