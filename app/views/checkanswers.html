@@ -21,6 +21,65 @@
 
     <p>Please review your answers before submitting.</p>
 
+    <h2 class="nhsuk-heading-m">
+      Personal details
+</h2>
+ 
+    {{ summaryList({
+      rows: [
+        {
+          key: {
+            text: "Symptoms of magical powers"
+          },
+          value: {
+            text: data.hasSymptoms
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "symptoms of magical powers"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Details of the symptoms"
+          },
+          value: {
+            text: data.details
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "details of the symptoms"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+ 
+    <h2 class="nhsuk-heading-m">
+      Now send your application
+</h2>
+ 
+    <p>
+      By submitting this application you are confirming that,
+      to the best of your knowledge, the details you are providing
+      are correct.
+</p>
+ 
+    <p>
+      Your details will be sent to Rose Medical Practice to begin
+      your registration.
+</p>
+
+
     <form action="/complete" method="post">
 
       {{ button({
