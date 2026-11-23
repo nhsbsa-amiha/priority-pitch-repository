@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% from "panel/macro.njk" import panel %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/checkanswers",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ panel({
+      titleText: "Application submitted",
+      html: "Reference number<br><strong>PP-2026-001</strong>"
+    }) }}
+
+    <h1 class="nhsuk-heading-l">
+      Thank you for your submission
+    </h1>
+
+    <p>
+      Your Pitch Priority application has been successfully submitted.
+    </p>
+
+    <p>
+      The Portfolio Board will review the information provided and will contact the project owner if any further information is required.
+    </p>
+
+    <p>
+      A confirmation of this submission has been recorded.
+    </p>
+
+    <h2 class="nhsuk-heading-m">
+      What happens next
+    </h2>
+
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>Your submission will be reviewed by the Portfolio Board.</li>
+      <li>The information provided may be assessed against current organisational priorities.</li>
+      <li>You may be contacted for clarification or further supporting information.</li>
+    </ul>
+
+    <p>
+      <a href="/start-page">Submit another Pitch Priority application</a>
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}
