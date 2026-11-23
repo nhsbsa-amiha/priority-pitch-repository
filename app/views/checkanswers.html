@@ -1,117 +1,35 @@
 {% extends "layout.html" %}
- 
-{% set mainClasses = "nhsuk-main-wrapper--s" %}
- 
+
+{% from "back-link/macro.njk" import backLink %}
+{% from "button/macro.njk" import button %}
+
 {% block beforeContent %}
   {{ backLink({
     href: "/question10",
     text: "Back"
   }) }}
 {% endblock %}
- 
- 
-{% from "button/macro.njk" import button %}
-{% from "summary-list/macro.njk" import summaryList %}
- 
+
 {% block content %}
+
 <div class="nhsuk-grid-row">
-<div class="nhsuk-grid-column-two-thirds">
- 
-      <h1 class="nhsuk-heading-l">Check your answers before sending your application</h1>
- 
-      <h2 class="nhsuk-heading-m">
-        Question 1
-</h2>
- 
-      {{ summaryList({
-        rows: [
-          {
-            key: {
-              text: "What is this Pitch called?"
-            },
-            value: {
-              text: "data.pitch-name"
-            },
-            actions: {
-              items: [
-                {
-                  href: "/question1",
-                  text: "Change",
-                  visuallyHiddenText: "pitch name"
-                }
-              ]
-            }
-          },
-                  visuallyHiddenText: "role"
-            key: {
-              text: "Who currently owns this project?"
-            },
-            value: {
-              text: "data.example1"
-            },
-            actions: {
-              items: [
-                {
-                  href: "/question1",
-                  text: "Change",
-                  visuallyHiddenText: "example1"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "What is their role in the NHSBSA?"
-            },
-            value: {
-              text: "data.example2"
-            },
-            actions: {
-              items: [
-                {
-                  href: "/question1",
-                  text: "Change",
-                  visuallyHiddenText: "example2"
-                }
-              ]
-            }
-          },
-          {
- 
-          {
-            key: {
-              text: "Date of Pitch"
-            },
-            value: {
-              text: "data.example3"
-            },
-            actions: {
-              items: [
-                {
-                  href: "/question1",
-                  text: "Change",
-                  visuallyHiddenText: "example3"
-                }
-              ]
-            }
-          }
-	 ]
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-heading-l">
+      Check your answers
+    </h1>
+
+    <p>Please review your answers before submitting.</p>
+
+    <form action="/complete" method="post">
+
+      {{ button({
+        text: "Confirm and send"
       }) }}
- 
-      <h2 class="nhsuk-heading-m">
-        Now send your application
-</h2>
- 
-      <p>
-        Your details will be sent to the Portfolio Board for consideration.
-</p>
- 
-      <form action="/complete" method="post" novalidate>
-        {{ button({
-          text: "Confirm and send"
-        }) }}
-</form>
- 
-    </div>
+
+    </form>
+
+  </div>
 </div>
+
 {% endblock %}
